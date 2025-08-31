@@ -4,7 +4,7 @@ if len(sys.argv) != 2:
     print("Usage: python3 main.py <path_to_book>")
     sys.exit(1)
 
-from stats import number_of_words, character_occurence, make_sorted_list
+from stats import get_number_of_words, get_character_occurence, make_sorted_list
 
 def get_book_text(path_to_file):
     with open(path_to_file) as f:
@@ -13,8 +13,8 @@ def get_book_text(path_to_file):
 
 def main():
     book_text = get_book_text(f"{sys.argv[1]}")
-    words = number_of_words(book_text)
-    number_char = character_occurence(book_text)
+    words = get_number_of_words(book_text)
+    number_char = get_character_occurence(book_text)
     sorted_list = make_sorted_list(number_char)
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {sys.argv[1]}")
